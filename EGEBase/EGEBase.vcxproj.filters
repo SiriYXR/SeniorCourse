@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="头文件\demo">
+      <UniqueIdentifier>{777ed496-9672-4531-9f0a-10049548a3e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\test">
+      <UniqueIdentifier>{0267dd67-bba6-401d-92ab-2a3c3428365a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -20,95 +26,140 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="demo1.hpp">
+      <Filter>头文件\demo</Filter>
+    </ClInclude>
+    <ClInclude Include="demo2.hpp">
+      <Filter>头文件\demo</Filter>
+    </ClInclude>
+    <ClInclude Include="demo3.hpp">
+      <Filter>头文件\demo</Filter>
+    </ClInclude>
     <ClInclude Include="test1.hpp">
-      <Filter>头文件</Filter>
+      <Filter>头文件\test</Filter>
     </ClInclude>
     <ClInclude Include="test2.hpp">
-      <Filter>头文件</Filter>
+      <Filter>头文件\test</Filter>
     </ClInclude>
     <ClInclude Include="test3.hpp">
-      <Filter>头文件</Filter>
+      <Filter>头文件\test</Filter>
     </ClInclude>
     <ClInclude Include="test4.hpp">
-      <Filter>头文件</Filter>
+      <Filter>头文件\test</Filter>
     </ClInclude>
     <ClInclude Include="test5.hpp">
-      <Filter>头文件</Filter>
+      <Filter>头文件\test</Filter>
     </ClInclude>
     <ClInclude Include="test6.hpp">
-      <Filter>头文件</Filter>
+      <Filter>头文件\test</Filter>
     </ClInclude>
     <ClInclude Include="test7.hpp">
-      <Filter>头文件</Filter>
+      <Filter>头文件\test</Filter>
     </ClInclude>
     <ClInclude Include="test8.hpp">
-      <Filter>头文件</Filter>
+      <Filter>头文件\test</Filter>
     </ClInclude>
     <ClInclude Include="test9.hpp">
-      <Filter>头文件</Filter>
+      <Filter>头文件\test</Filter>
     </ClInclude>
     <ClInclude Include="test10.hpp">
-      <Filter>头文件</Filter>
+      <Filter>头文件\test</Filter>
     </ClInclude>
     <ClInclude Include="test11.hpp">
-      <Filter>头文件</Filter>
+      <Filter>头文件\test</Filter>
     </ClInclude>
     <ClInclude Include="test12.hpp">
-      <Filter>头文件</Filter>
+      <Filter>头文件\test</Filter>
     </ClInclude>
     <ClInclude Include="test13.hpp">
-      <Filter>头文件</Filter>
+      <Filter>头文件\test</Filter>
     </ClInclude>
     <ClInclude Include="test14.hpp">
-      <Filter>头文件</Filter>
+      <Filter>头文件\test</Filter>
     </ClInclude>
     <ClInclude Include="test15.hpp">
-      <Filter>头文件</Filter>
+      <Filter>头文件\test</Filter>
     </ClInclude>
     <ClInclude Include="test16.hpp">
-      <Filter>头文件</Filter>
+      <Filter>头文件\test</Filter>
     </ClInclude>
     <ClInclude Include="test17.hpp">
-      <Filter>头文件</Filter>
+      <Filter>头文件\test</Filter>
     </ClInclude>
     <ClInclude Include="test18.hpp">
-      <Filter>头文件</Filter>
+      <Filter>头文件\test</Filter>
     </ClInclude>
     <ClInclude Include="test19.hpp">
-      <Filter>头文件</Filter>
+      <Filter>头文件\test</Filter>
     </ClInclude>
     <ClInclude Include="test20.hpp">
-      <Filter>头文件</Filter>
+      <Filter>头文件\test</Filter>
     </ClInclude>
     <ClInclude Include="test21.hpp">
-      <Filter>头文件</Filter>
+      <Filter>头文件\test</Filter>
     </ClInclude>
     <ClInclude Include="test22.hpp">
-      <Filter>头文件</Filter>
+      <Filter>头文件\test</Filter>
     </ClInclude>
     <ClInclude Include="test23.hpp">
-      <Filter>头文件</Filter>
+      <Filter>头文件\test</Filter>
     </ClInclude>
     <ClInclude Include="test24.hpp">
-      <Filter>头文件</Filter>
+      <Filter>头文件\test</Filter>
     </ClInclude>
     <ClInclude Include="test25.hpp">
-      <Filter>头文件</Filter>
+      <Filter>头文件\test</Filter>
     </ClInclude>
     <ClInclude Include="test26.hpp">
-      <Filter>头文件</Filter>
+      <Filter>头文件\test</Filter>
     </ClInclude>
     <ClInclude Include="test27.hpp">
-      <Filter>头文件</Filter>
+      <Filter>头文件\test</Filter>
     </ClInclude>
     <ClInclude Include="test28.hpp">
-      <Filter>头文件</Filter>
+      <Filter>头文件\test</Filter>
     </ClInclude>
     <ClInclude Include="test29.hpp">
-      <Filter>头文件</Filter>
+      <Filter>头文件\test</Filter>
     </ClInclude>
     <ClInclude Include="tests.h">
-      <Filter>头文件</Filter>
+      <Filter>头文件\test</Filter>
+    </ClInclude>
+    <ClInclude Include="demos.h">
+      <Filter>头文件\demo</Filter>
+    </ClInclude>
+    <ClInclude Include="demo4.hpp">
+      <Filter>头文件\demo</Filter>
+    </ClInclude>
+    <ClInclude Include="demo5.hpp">
+      <Filter>头文件\demo</Filter>
+    </ClInclude>
+    <ClInclude Include="demo6.hpp">
+      <Filter>头文件\demo</Filter>
+    </ClInclude>
+    <ClInclude Include="demo7.hpp">
+      <Filter>头文件\demo</Filter>
+    </ClInclude>
+    <ClInclude Include="demo8.hpp">
+      <Filter>头文件\demo</Filter>
+    </ClInclude>
+    <ClInclude Include="demo9.hpp">
+      <Filter>头文件\demo</Filter>
+    </ClInclude>
+    <ClInclude Include="demo10.hpp">
+      <Filter>头文件\demo</Filter>
+    </ClInclude>
+    <ClInclude Include="demo11.hpp">
+      <Filter>头文件\demo</Filter>
+    </ClInclude>
+    <ClInclude Include="demo12.hpp">
+      <Filter>头文件\demo</Filter>
+    </ClInclude>
+    <ClInclude Include="demo13.hpp">
+      <Filter>头文件\demo</Filter>
+    </ClInclude>
+    <ClInclude Include="demo14.hpp">
+      <Filter>头文件\demo</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

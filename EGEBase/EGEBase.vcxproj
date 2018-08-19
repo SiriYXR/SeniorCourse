@@ -77,7 +77,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
       <AdditionalIncludeDirectories>$(SolutionDir)library\ege\include;$(IncludePath)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -122,6 +122,21 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="demo1.hpp" />
+    <ClInclude Include="demo10.hpp" />
+    <ClInclude Include="demo11.hpp" />
+    <ClInclude Include="demo12.hpp" />
+    <ClInclude Include="demo13.hpp" />
+    <ClInclude Include="demo14.hpp" />
+    <ClInclude Include="demo2.hpp" />
+    <ClInclude Include="demo3.hpp" />
+    <ClInclude Include="demo4.hpp" />
+    <ClInclude Include="demo5.hpp" />
+    <ClInclude Include="demo6.hpp" />
+    <ClInclude Include="demo7.hpp" />
+    <ClInclude Include="demo8.hpp" />
+    <ClInclude Include="demo9.hpp" />
+    <ClInclude Include="demos.h" />
     <ClInclude Include="test1.hpp" />
     <ClInclude Include="test10.hpp" />
     <ClInclude Include="test11.hpp" />
