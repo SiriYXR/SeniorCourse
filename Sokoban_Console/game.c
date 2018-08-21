@@ -2,9 +2,6 @@
 
 char game(int level)
 {
-	
-	
-
 	//变量申明
 	//i,t 循环计数器, x 纵坐标, y 横坐标, pass 通关判断条件
 	//restep_num 记录每局撤销次数,step_num 记录本局总步数,wide 地图宽度
@@ -381,9 +378,11 @@ void mainloop() {
 	int level, level_option, i;
 	char option;
 
+	//初始化关卡，操作指令
 	level = 0;
 	option = 'M';
-	//主界面1
+
+	//主界面
 	char main_interface[50][50] = {
 		"\n\n\n\n\n\n\n",
 		"\t\t\t\t\t\t\t 推箱子",
@@ -397,12 +396,30 @@ void mainloop() {
 		"\t\t\t\t\t\t   |               |",
 		"\t\t\t\t\t\t   |===============|",
 	};
-	//主程序
-	while (option != 27)
+
+	char menu2[50][50] = {
+		"\n\n\n\n\n\n\n\n",
+		"\t\t\t\t\t\t\t 推箱子",
+		"\t\t\t\t\t\t   |===============|",
+		"\t\t\t\t\t\t   |               |",
+		"\t\t\t\t\t\t   |               |",
+		"\t\t\t\t\t\t   |    开始(S)    |",
+		"\t\t\t\t\t\t   |               |",
+		"\t\t\t\t\t\t   |   退出(ESC)   |",
+		"\t\t\t\t\t\t   |               |",
+		"\t\t\t\t\t\t   |               |",
+		"\t\t\t\t\t\t   |===============|",
+	};
+
+
+
+	//开始消息循环
+	while(1)//条件永远为真，无限循环
 	{
 		system("cls");
-		for (i = 0; i<11; i++)//主菜单1
+		for (i = 0; i<11; i++)//打印主界面
 			puts(main_interface[i]);
+
 		while (1)
 		{
 			option = getch();
