@@ -115,7 +115,7 @@ void mainloop() {
 				level_option--;
 			else if ((option == 'd') && level_option < maps_num)
 				level_option++;
-			else if ((option == 30 || option == 32)) {//如果输入为空格（32）或回车（30）则进入选择的关卡
+			else if ((option == 13 || option == 32)) {//如果输入为空格（32）或回车（13）则进入选择的关卡
 				level = level_option - 1;//将当前关卡更新为选择的关卡，其对应关系为 level = level_option - 1
 				scenes = 4;
 			}
