@@ -7,4 +7,5 @@
 
 void init();
 void mainloop();
+int gameloop(int level);
 void LoadMap(int level, int *map_high, char(*map)[50]);
