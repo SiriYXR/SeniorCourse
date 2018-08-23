@@ -29,6 +29,14 @@
 ### library
 &emsp;&emsp;该文件夹中为适配于`VS2017`的`EGE图形库`文件，同时还包含了EGE官方的HTML教学资料和帮助文档以及示例程序源码，是非常重要的学习资料，其中帮助文档为全中文，特别适合新手程序员阅读学习，在今后的编程学习之路上会经常使用一些第三方的库，而其配套文档往往非常复杂且是英文编写，所以学会阅读帮助文档也是变成学习的一个重要技能。<br>
 &emsp;&emsp;教程文件位置在`library/ege/man`文件夹下，打开`index.htm`文件即可在浏览器中以网页形式浏览<br>
+
+<div align=center>
+  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/ege/ege_index.png"/>
+  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/ege/ege_test.png"/>
+  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/ege/ege_help.png"/>
+  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/ege/ege_help2.png"/>
+</div>
+
 &emsp;&emsp;**需要注意的是，由于本项目仅配有`VS2017`版本的`EGE图形库`，所以使用`VS2015`,`VS2010`甚至更低版本或者其他品牌IDE的同学需要到[EGE官网](http://xege.org/)去自行下载配置相应版本的EGE图形库。**
 ### doc
 &emsp;&emsp;该文件夹下存储的README所用的图片资源。
