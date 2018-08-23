@@ -18,8 +18,8 @@
 &emsp;&emsp;该项目工程为EGE的基础教学代码，来自EGE官方教程，其中包含了29个练习示例和14个demo程序供同学参考学习。课堂上会选讲一些该项目中的重要内容，主要还是需要同学们下来利用课余时间自行学习。
 
 <div align=center>
-  <img src="https://github.com/SiriYXR/SeniorCourse/tree/master/doc/img/egebase/1.png"/>
-  <img src="https://github.com/SiriYXR/SeniorCourse/tree/master/doc/img/egebase/2.png"/>
+  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/egebase/1.png"/>
+  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/egebase/2.png"/>
 </div>
 
 ### Sokoban_Console
@@ -42,11 +42,11 @@
 &emsp;&emsp;本项目修改自[Sokoban2.1](https://github.com/SiriYXR/Sokoban2.1)
 
 <div align=center>
-  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/sokoban_ege/1.png"/>
-  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/sokoban_ege/2.png"/>
-  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/sokoban_ege/3.png"/>
-  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/sokoban_ege/4.png"/>
-  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/sokoban_ege/5.png"/>
+  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/sokoban_ege/1.jpg"/>
+  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/sokoban_ege/2.jpg"/>
+  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/sokoban_ege/3.jpg"/>
+  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/sokoban_ege/4.jpg"/>
+  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/sokoban_ege/5.jpg"/>
 </div>
 
 ### library
