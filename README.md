@@ -77,9 +77,6 @@
 
 <div align=center>
   <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/ege/ege_index.png"/>
-  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/ege/ege_test.png"/>
-  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/ege/ege_help.png"/>
-  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/ege/ege_help2.png"/>
 </div>
 
 &emsp;&emsp;**需要注意的是，由于本项目仅配有`VS2017`版本的`EGE图形库`，所以使用`VS2015`,`VS2010`甚至更低版本或者其他品牌IDE的同学需要到[EGE官网](http://xege.org/)去自行下载配置相应版本的EGE图形库。**
