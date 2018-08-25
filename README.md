@@ -9,13 +9,13 @@
 &emsp;&emsp;本项目程序采用`VS2017`和相应版本`EGE图形库`开发，项目相关资源库文件均包含在项目文件夹中，同时项目属性以相对路径进行配置，以保证同学们下载解压就能正常运行。所以建议同学们下载相同版本的开发软件进行使用，以免发生版本不兼容的问题。
 ### 项目下载
 <div align=center>
-  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/Instructions/download.png"/>
+  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/Instructions/download.png"/>
 </div>
 
 ### 项目使用
 <div align=center>
-  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/Instructions/open.png"/>
-  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/Instructions/running.png"/>
+  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/Instructions/open.png"/>
+  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/Instructions/running.png"/>
 </div>
 
 ## 项目结构介绍
@@ -32,8 +32,8 @@
 &emsp;&emsp;该项目工程为EGE的基础教学代码，来自EGE官方教程，其中包含了29个练习示例和14个demo程序供同学参考学习。课堂上会选讲一些该项目中的重要内容，主要还是需要同学们下来利用课余时间自行学习。
 
 <div align=center>
-  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/egebase/1.png"/>
-  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/egebase/2.png"/>
+  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/egebase/1.png"/>
+  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/egebase/2.png"/>
 </div>
 
 ### Sokoban_Console
@@ -45,22 +45,22 @@
 4. 添加详细注释
 
 <div align=center>
-  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/sokoban_console/1.png"/>
-  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/sokoban_console/2.png"/>
-  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/sokoban_console/3.png"/>
-  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/sokoban_console/4.png"/>
-  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/sokoban_console/5.png"/>
+  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/sokoban_console/1.png"/>
+  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/sokoban_console/2.png"/>
+  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/sokoban_console/3.png"/>
+  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/sokoban_console/4.png"/>
+  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/sokoban_console/5.png"/>
 </div>
 
 ### Sokoban_EGE
 &emsp;&emsp;本项目修改自[Sokoban2.1](https://github.com/SiriYXR/Sokoban2.1)
 
 <div align=center>
-  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/sokoban_ege/1.jpg"/>
-  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/sokoban_ege/2.jpg"/>
-  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/sokoban_ege/3.jpg"/>
-  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/sokoban_ege/4.jpg"/>
-  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/sokoban_ege/5.jpg"/>
+  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/sokoban_ege/1.jpg"/>
+  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/sokoban_ege/2.jpg"/>
+  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/sokoban_ege/3.jpg"/>
+  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/sokoban_ege/4.jpg"/>
+  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/sokoban_ege/5.jpg"/>
 </div>
 
 ### library
@@ -68,10 +68,10 @@
 &emsp;&emsp;教程文件位置在`library/ege/man`文件夹下，打开`index.htm`文件即可在浏览器中以网页形式浏览:<br>
 
 <div align=center>
-  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/ege/ege_index.png"/>
-  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/ege/ege_test.png"/>
-  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/ege/ege_help.png"/>
-  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/ege/ege_help2.png"/>
+  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/ege/ege_index.png"/>
+  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/ege/ege_test.png"/>
+  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/ege/ege_help.png"/>
+  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/ege/ege_help2.png"/>
 </div>
 
 &emsp;&emsp;**需要注意的是，由于本项目仅配有`VS2017`版本的`EGE图形库`，所以使用`VS2015`,`VS2010`甚至更低版本或者其他品牌IDE的同学需要到[EGE官网](http://xege.org/)去自行下载配置相应版本的EGE图形库。**
