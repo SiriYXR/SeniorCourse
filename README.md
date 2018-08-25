@@ -7,7 +7,14 @@
 
 ## 使用说明
 &emsp;&emsp;本项目程序采用`VS2017`和相应版本`EGE图形库`开发，项目相关资源库文件均包含在项目文件夹中，同时项目属性以相对路径进行配置，以保证同学们下载解压就能正常运行。所以建议同学们下载相同版本的开发软件进行使用，以免发生版本不兼容的问题。<br>
-[最新版 Visual Studio 微软官网下载链接](https://visualstudio.microsoft.com/zh-hans/?rr=https%3A%2F%2Fdeveloper.microsoft.com%2Fzh-cn%2Fwindows)<br>
+### IDE下载安装
+&emsp;&emsp;[最新版 Visual Studio 微软官网下载链接](https://visualstudio.microsoft.com/zh-hans/?rr=https%3A%2F%2Fdeveloper.microsoft.com%2Fzh-cn%2Fwindows)<br>
+
+<div align=center>
+  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/Instructions/IDEdownload.png"/>
+</div>
+
+&emsp;&emsp;下载时请选择`Visual Studio IDE Community(社区版)`,该版本是微软针对于个人或小型开发团队发布的一个免费`IDE(集成开发环境)`编程软件,凭借其强大的调试功能，堪称C++最强开发软件！
 ### 项目下载
 <div align=center>
   <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/Instructions/download.png"/>
