@@ -8,10 +8,14 @@
 ## 使用说明
 &emsp;&emsp;本项目程序采用`VS2017`和相应版本`EGE图形库`开发，项目相关资源库文件均包含在项目文件夹中，同时项目属性以相对路径进行配置，以保证同学们下载解压就能正常运行。所以建议同学们下载相同版本的开发软件进行使用，以免发生版本不兼容的问题。
 ### 项目下载
+<div align=center>
+  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/Instructions/download.png"/>
+</div>
 
 ### 项目使用
 <div align=center>
-  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/Instructions/Instructions.png"/>
+  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/Instructions/open.png"/>
+  <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/img/Instructions/running.png"/>
 </div>
 
 ## 项目结构介绍
