@@ -35,14 +35,19 @@
 
 ## 项目结构介绍
 项目结构如下：<br>
+* doc
 * SeniorCourse
 * EGEBase
 * Sokoban_Console
 * Sokoban_EGE
 * library
-* doc
+
+### doc
+&emsp;&emsp;该文件夹下存储的上课使用的教学课件，提供给同学们课下学习的资料文件以及README所用的图片资源。
+
 ### SeniorCourse
 &emsp;&emsp;该项目工程为上课教学代码编写演示所用，其下将会保存上课时所写的一些代码草稿。
+
 ### EGEBase
 &emsp;&emsp;该项目工程为EGE的基础教学代码，来自EGE官方教程，其中包含了29个练习示例和14个demo程序供同学参考学习。课堂上会选讲一些该项目中的重要内容，主要还是需要同学们下来利用课余时间自行学习。
 
@@ -87,5 +92,4 @@
 </div>
 
 &emsp;&emsp;**需要注意的是，由于本项目仅配有`VS2017`版本的`EGE图形库`，所以使用`VS2015`,`VS2010`甚至更低版本或者其他品牌IDE的同学需要到[EGE官网](http://xege.org/)去自行下载配置相应版本的EGE图形库。**
-### doc
-&emsp;&emsp;该文件夹下存储的上课使用的教学课件，提供给同学们课下学习的资料文件以及README所用的图片资源。
+
