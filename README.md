@@ -27,7 +27,7 @@
 </div>
 
 ### 其他
-&emsp;&emsp;该账号下上传了我从学习编程以来到现在所写的各种大大小小的项目，也欢迎大家下载参考学习，以后还有有更多的项目代码上传到该`github`中。感兴趣的同学可以在我的主页`"Follow"`我，成为我的`"Followers"`。(/≧▽≦)/~┴┴<br>
+&emsp;&emsp;该`github`账号下上传了我从学习编程以来到现在所写的各种大大小小的项目，也欢迎大家下载参考学习，以后还有有更多的项目代码上传到该`github`账号中。感兴趣的同学可以在我的主页`"Follow"`我，成为我的`"Followers"`。(/≧▽≦)/~┴┴<br>
 
 <div align=center>
   <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/Instructions/follow.png"/>
