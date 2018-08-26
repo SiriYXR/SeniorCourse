@@ -48,10 +48,10 @@
 
 ### 项目结构如下：<br>
 * [doc](#doc)
-* [SeniorCourse](#SeniorCourse)
-* [EGEBase](# EGEBase)
-* [Sokoban_Console](#Sokoban_Console)
-* [Sokoban_EGE](#Sokoban_EGE)
+* [SeniorCourse](#seniorcourse)
+* [EGEBase](#egebase)
+* [Sokoban_Console](#sokoban_console)
+* [Sokoban_EGE](#sokoban_ege)
 * [library](#library)
 
 ### doc
