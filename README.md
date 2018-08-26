@@ -38,7 +38,7 @@
 </div>
 
 ### 其他
-&emsp;&emsp;该`github`账号下上传了我从学习编程以来到现在所写的各种大大小小的项目，也欢迎大家下载参考学习，以后还有有更多的项目代码上传到该`github`账号中。感兴趣的同学可以在我的主页`"Follow"`我，成为我的`"Followers"`。(/≧▽≦)/~┴┴<br>
+&emsp;&emsp;该`github`账号下上传了我从学习编程以来到现在所写的各种大大小小的项目，也欢迎大家下载参考学习，以后还有有更多的项目代码上传到该账号中。感兴趣的同学可以在我的主页`"Follow"`我，成为我的`"Followers"`。(/≧▽≦)/~┴┴<br>
 
 <div align=center>
   <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/Instructions/follow.png"/>
@@ -48,11 +48,11 @@
 
 ### 项目结构如下：<br>
 * [doc](#doc)
-* SeniorCourse
-* EGEBase
-* Sokoban_Console
-* Sokoban_EGE
-* library
+* [SeniorCourse](SeniorCourse)
+* [EGEBase](EGEBase)
+* [Sokoban_Console](Sokoban_Console)
+* [Sokoban_EGE](Sokoban_EGE)
+* [library](library)
 
 ### doc
 &emsp;&emsp;该文件夹下存储的上课使用的教学课件，提供给同学们课下学习的资料文件以及README所用的图片资源。<br>
