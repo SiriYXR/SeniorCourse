@@ -48,16 +48,25 @@
 
 ### 项目结构如下：<br>
 * [doc](#doc)
-* [SeniorCourse](SeniorCourse)
-* [EGEBase](EGEBase)
-* [Sokoban_Console](Sokoban_Console)
-* [Sokoban_EGE](Sokoban_EGE)
-* [library](library)
+* [SeniorCourse](#SeniorCourse)
+* [EGEBase](#EGEBase)
+* [Sokoban_Console](#Sokoban_Console)
+* [Sokoban_EGE](#Sokoban_EGE)
+* [library](#library)
 
 ### doc
 &emsp;&emsp;该文件夹下存储的上课使用的教学课件，提供给同学们课下学习的资料文件以及README所用的图片资源。<br>
-#### 目录结构：
 
+#### 目录结构：
+* README
+* 参考资料
+  * 语法
+  * 算法
+  * 数据结构
+  * 其他
+  * 环境配置
+  * 帮助文档
+* 教学课件
 
 ### SeniorCourse
 &emsp;&emsp;该项目工程为上课教学代码编写演示所用，其下将会保存上课时所写的一些代码草稿。
