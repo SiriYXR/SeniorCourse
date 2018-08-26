@@ -47,12 +47,12 @@
 ## 项目结构介绍
 
 ### 项目结构如下：<br>
-* [doc](#doc)
-* [SeniorCourse](#SeniorCourse)
-* [EGEBase](#EGEBase)
-* [Sokoban_Console](#Sokoban_Console)
-* [Sokoban_EGE](#Sokoban_EGE)
-* [library](#library)
+* [doc](# doc)
+* [SeniorCourse](# SeniorCourse)
+* [EGEBase](# EGEBase)
+* [Sokoban_Console](# Sokoban_Console)
+* [Sokoban_EGE](# Sokoban_EGE)
+* [library](# library)
 
 ### doc
 &emsp;&emsp;该文件夹下存储的上课使用的教学课件，提供给同学们课下学习的资料文件以及README所用的图片资源。<br>
