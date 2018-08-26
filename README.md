@@ -1,4 +1,4 @@
-# SeniorCourse
+# Senior Course
 成都大学 信工学院 学长课堂 C/C++方向  18级大一上学期
 
 ## 简介
@@ -48,7 +48,7 @@
 
 ### 项目结构如下：<br>
 * [doc](#doc)
-* [Senior_Course](#senior_course)
+* [SeniorCourse](#seniorcourse)
 * [EGEBase](#egebase)
 * [Sokoban_Console](#sokoban_console)
 * [Sokoban_EGE](#sokoban_ege)
@@ -69,7 +69,7 @@
   * 帮助文档
 
 
-### Senior_Course
+### SeniorCourse
 &emsp;&emsp;该项目工程为上课教学代码编写演示所用，其下将会保存上课时所写的一些代码草稿。
 
 ### EGEBase
