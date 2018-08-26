@@ -48,7 +48,7 @@
 
 ### 项目结构如下：<br>
 * [doc](#doc)
-* [SeniorCourse](#senior course)
+* [Senior_Course](#senior_course)
 * [EGEBase](#egebase)
 * [Sokoban_Console](#sokoban_console)
 * [Sokoban_EGE](#sokoban_ege)
@@ -69,7 +69,7 @@
   * 帮助文档
 
 
-### Senior Course
+### Senior_Course
 &emsp;&emsp;该项目工程为上课教学代码编写演示所用，其下将会保存上课时所写的一些代码草稿。
 
 ### EGEBase
