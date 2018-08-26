@@ -90,6 +90,22 @@
 3. 修改变量命名，使其更具语义化
 4. 添加详细注释
 
+代码文件：<br>
+
+|文件名|说明|
+|:---|:---|
+|[function.h](https://github.com/SiriYXR/SeniorCourse/blob/master/Sokoban_Console/function.h)|函数前置声明，全局变量声明|
+|[main.c](https://github.com/SiriYXR/SeniorCourse/blob/master/Sokoban_Console/main.c)|定义程序入口main()函数|
+|[game.c](https://github.com/SiriYXR/SeniorCourse/blob/master/Sokoban_Console/game.c)|定义游戏循环，文件读取等函数|
+
+资源文件：<br>
+
+|文件/文件夹名|说明|
+|:---|:---|
+|[data/Map](https://github.com/SiriYXR/SeniorCourse/tree/master/Sokoban_Console/data/Map)|存储游戏的地图文件|
+
+<br>
+
 <div align=center>
   <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/sokoban_console/1.png"/>
   <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/sokoban_console/2.png"/>
