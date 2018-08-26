@@ -61,12 +61,12 @@
 * README
 * 教学课件
 * 参考资料
-  * 语法
-  * 算法
-  * 数据结构
-  * 其他
-  * 环境配置
-  * 帮助文档
+  * [语法](https://github.com/SiriYXR/SeniorCourse/tree/master/doc/%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99/%E8%AF%AD%E6%B3%95)
+  * [算法](https://github.com/SiriYXR/SeniorCourse/tree/master/doc/%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99/%E7%AE%97%E6%B3%95)
+  * [数据结构](https://github.com/SiriYXR/SeniorCourse/tree/master/doc/%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84)
+  * [其他](https://github.com/SiriYXR/SeniorCourse/tree/master/doc/%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99/%E5%85%B6%E4%BB%96)
+  * [环境配置](https://github.com/SiriYXR/SeniorCourse/tree/master/doc/%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE)
+  * [帮助文档](https://github.com/SiriYXR/SeniorCourse/tree/master/doc/%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3)
 
 
 ### SeniorCourse
