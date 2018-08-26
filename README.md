@@ -3,10 +3,14 @@
 
 ## 简介
 &emsp;&emsp;本项目为成都大学信工学院学长课堂`C/C++方向`18级大一上学期课程同步教学资料,随课程进行，一些后续的相关学习资料也会持续更新到项目文件中，方便同学们下载使用。<br>
+
+&emsp;&emsp;该课程将会以使用C语言开发一个控制台版推箱子游戏为主线，围绕该主线讲解使用到的C语言相关语法知识，以及一些拓展内容。带领大家从零基础学习C语言语法、开发软件使用、程序项目设计开发。后期还会教授大家学习使用一个图形，开发色彩丰富，更为酷炫的程序软件。
+
 &emsp;&emsp;本项目除第三方配套教学代码以外，均采用规范编写格式编写，配套详细而丰富的中文注释，极大降低同学们的编程学习难度。<br>
 
 ## 使用说明
 &emsp;&emsp;本项目程序采用`VS2017`和相应版本`EGE图形库`开发，项目相关资源库文件均包含在项目文件夹中，同时项目属性以相对路径进行配置，以保证同学们下载解压就能正常运行。所以建议同学们下载相同版本的开发软件进行使用，以免发生版本不兼容的问题。<br>
+
 ### IDE下载安装
 &emsp;&emsp;[最新版 Visual Studio 微软官网下载链接](https://visualstudio.microsoft.com/zh-hans/?rr=https%3A%2F%2Fdeveloper.microsoft.com%2Fzh-cn%2Fwindows)<br>
 
@@ -15,6 +19,13 @@
 </div>
 
 &emsp;&emsp;下载时请选择`Visual Studio IDE Community(社区版)`,该版本是微软针对于个人或小型开发团队发布的一个免费`IDE(集成开发环境)`编程软件,凭借其强大的调试功能，堪称C++最强开发软件！
+
+&emsp;&emsp;[Visual Studio 安装教程文件链接](https://github.com/SiriYXR/SeniorCourse/blob/master/doc/%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Microsoft%20Visual%20Studio%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8v2.0.docx)`(该文件包含VS2013,VS2015，VS2017安装教程)`<br>
+
+&emsp;&emsp;**Visual Studio安装程序为在线安装，所以安装过程中请保持网络稳定。仅安装编程学习必要的C++组件需要大约8个G,虽然可以选择安装路径，但是大部分核心组件默认必须安装在C盘，所以为了方便后期软件管理，建议使用默认安装路径，将整个程序安装在C盘，安装前请保证C盘空间足够。**<br>
+
+&emsp;&emsp;**`由于后期编程学习还要安装配置大量环境、软件，将会占用大量C盘空间，所以在系统分盘的时候建议C盘保留至少100G，一旦C盘空间分离出去除非使用第三方分盘软件或者重装系统格式化硬盘否则将无法将空闲分区重新分配给C盘！！！`**<br>
+
 ### 项目下载
 <div align=center>
   <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/Instructions/download.png"/>
@@ -34,6 +45,7 @@
 </div>
 
 ## 项目结构介绍
+
 项目结构如下：<br>
 * doc
 * SeniorCourse
@@ -58,6 +70,7 @@
 
 ### Sokoban_Console
 &emsp;&emsp;本项目修改自[Sokoban1.1](https://github.com/SiriYXR/Sokoban1.1),是一个纯C语言的Win32控制台推箱子游戏，实现了关卡选择，行动撤回等功能。<br>
+
 &emsp;&emsp;由于原项目为我大一上学期时编写，因当时编程经验不足导致代码冗余，没有注释不易理解，算法不够优化等问题。所以现今现版本在尽量保留原有程序C语言风格的基础上做如下修改：
 1. 重构程序消息循环架构
 2. 优化算法，删除冗余代码
@@ -85,6 +98,7 @@
 
 ### library
 &emsp;&emsp;该文件夹中为适配于`VS2017`的`EGE图形库`文件，同时还包含了EGE官方的HTML教学资料和帮助文档以及示例程序源码，是非常重要的学习资料，其中帮助文档为全中文，特别适合新手程序员阅读学习，在今后的编程学习之路上会经常使用一些第三方的库，而其配套文档往往非常复杂且是英文编写，所以学会阅读帮助文档也是变成学习的一个重要技能。<br>
+
 &emsp;&emsp;教程文件位置在`library/ege/man`文件夹下，打开`index.htm`文件即可在浏览器中以网页形式浏览:<br>
 
 <div align=center>
