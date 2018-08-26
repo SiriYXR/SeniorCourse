@@ -11,7 +11,6 @@
 ## 使用说明
 &emsp;&emsp;本项目程序采用`VS2017`和相应版本`EGE图形库`开发，项目相关资源库文件均包含在项目文件夹中，同时项目属性以相对路径进行配置，以保证同学们下载解压就能正常运行。所以建议同学们下载相同版本的开发软件进行使用，以免发生版本不兼容的问题。<br>
 
----
 ### IDE下载安装
 &emsp;&emsp;[最新版 Visual Studio 微软官网下载链接](https://visualstudio.microsoft.com/zh-hans/?rr=https%3A%2F%2Fdeveloper.microsoft.com%2Fzh-cn%2Fwindows)<br>
 
@@ -27,20 +26,17 @@
 
 &emsp;&emsp;**`由于后期编程学习还要安装配置大量环境、软件，将会占用大量C盘空间，所以在系统分盘的时候建议C盘保留至少100G，一旦C盘空间分离出去除非使用第三方分盘软件或者重装系统格式化硬盘否则将无法将空闲分区重新分配给C盘！！！`**<br>
 
----
 ### 项目下载
 <div align=center>
   <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/Instructions/download.png"/>
 </div>
 
----
 ### 项目使用
 <div align=center>
   <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/Instructions/open.png"/>
   <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/Instructions/running.png"/>
 </div>
 
----
 ### 其他
 &emsp;&emsp;该`github`账号下上传了我从学习编程以来到现在所写的各种大大小小的项目，也欢迎大家下载参考学习，以后还有有更多的项目代码上传到该账号中。感兴趣的同学可以在我的主页`"Follow"`我，成为我的`"Followers"`。(/≧▽≦)/~┴┴<br>
 
@@ -73,11 +69,9 @@
   * [环境配置](https://github.com/SiriYXR/SeniorCourse/tree/master/doc/%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE)
   * [帮助文档](https://github.com/SiriYXR/SeniorCourse/tree/master/doc/%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3)
 
----
 ### SeniorCourse
 &emsp;&emsp;该项目工程为上课教学代码编写演示所用，其下将会保存上课时所写的一些代码草稿。
 
----
 ### EGEBase
 &emsp;&emsp;该项目工程为EGE的基础教学代码，来自EGE官方教程，其中包含了29个练习示例和14个demo程序供同学参考学习。课堂上会选讲一些该项目中的重要内容，主要还是需要同学们下来利用课余时间自行学习。
 
