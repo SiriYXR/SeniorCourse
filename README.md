@@ -18,13 +18,14 @@
   <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/Instructions/IDEdownload.png"/>
 </div>
 
-&emsp;&emsp;下载时请选择`Visual Studio IDE Community(社区版)`,该版本是微软针对于个人或小型开发团队发布的一个免费`IDE(集成开发环境)`编程软件,凭借其强大的调试功能，堪称C++最强开发软件！
+&emsp;&emsp;下载时请选择`Visual Studio IDE Community(社区版)`,该版本是微软针对于个人或小型开发团队发布的一个免费`IDE(集成开发环境)`编程软件,凭借其强大的调试功能，堪称C++最强开发软件!!!
 
 &emsp;&emsp;[Visual Studio 安装教程文件链接](https://github.com/SiriYXR/SeniorCourse/blob/master/doc/%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Microsoft%20Visual%20Studio%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8v2.0.docx)`(该文件包含VS2013,VS2015，VS2017安装教程)`<br>
 
 &emsp;&emsp;**Visual Studio安装程序为在线安装，所以安装过程中请保持网络稳定。仅安装编程学习必要的C++组件需要大约8个G,虽然可以选择安装路径，但是大部分核心组件默认必须安装在C盘，所以为了方便后期软件管理，建议使用默认安装路径，将整个程序安装在C盘，安装前请保证C盘空间足够。**<br>
 
 &emsp;&emsp;**`由于后期编程学习还要安装配置大量环境、软件，将会占用大量C盘空间，所以在系统分盘的时候建议C盘保留至少100G，一旦C盘空间分离出去除非使用第三方分盘软件或者重装系统格式化硬盘否则将无法将空闲分区重新分配给C盘！！！`**<br>
+
 
 ### 项目下载
 <div align=center>
