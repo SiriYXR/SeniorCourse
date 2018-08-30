@@ -42,4 +42,4 @@ int gameloop(int level);
 	map:存储关卡的二维数组
 返回值：
 */
-void LoadMap(int level, int *map_high, char(*map)[50]);
+void LoadMap(int level,char(*map)[50]);
