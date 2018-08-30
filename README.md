@@ -14,7 +14,8 @@
   <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/Instructions/IDEdownload.png"/>
 </div>
 
-&emsp;&emsp;下载时请选择`Visual Studio IDE Community(社区版)`,该版本是微软针对于个人或小型开发团队发布的一个免费`IDE(集成开发环境)`编程软件,凭借其强大的调试功能，堪称C++最强开发软件！
+&emsp;&emsp;下载时请选择`Visual Studio IDE Community(社区版)`,该版本是微软针对于个人或小型开发团队发布的一个免费`IDE(集成开发环境)`编程软件,凭借其强大的调试功能，堪称C++最强开发软件!!!
+
 ### 项目下载
 <div align=center>
   <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/Instructions/download.png"/>
