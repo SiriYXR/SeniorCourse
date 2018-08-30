@@ -6,7 +6,7 @@ void lastlevel();
 void passlevel(int step_num);
 
 
-char gameloop(int level)
+int gameloop(int level)
 {
 	mciSendString(TEXT("open Boxmove.wav alias Boxmove"), NULL, 0, NULL);
 
@@ -40,33 +40,55 @@ char gameloop(int level)
 	getimage(pimg_ManLEFT2, "resources\\image\\ManLEFT2.jpg", 0, 0);
 	getimage(pimg_black, "resources\\image\\black.jpg", 0, 0);
 	
-	//定义及初始化地图
-	char map[50][50];
-	LoadMap(level, map);
-	
 	//变量申明
-	//i,t 循环计数器, x 纵坐标, y 横坐标, pass 通关判断条件
-	//restep_num 记录每局撤销次数,step_num 记录本局总步数,wide 地图宽度
-	int i, t, x, y, pass, restep_num, step_num, wide, high, count;
-	//(ch 游戏过程中读取键盘信息, option暂停过程中读取键盘信息及游戏结束返还值,last_step 记录上一步数据)
-	char ch, option, last_step;
-	//申明两数组，记录终点坐标
-	int X_num[50] = { 0 }, Y_num[50] = { 0 }, xnum, ynum;
-	//lstep 记录是否撤销过,x_box 记录上一次推箱子前箱的纵坐标子,y_box 记录上一次推箱子前箱的横坐标子, rerestep_num 记录上一次推箱子前所走的步数
-	int lstep, x_box, y_box, rerestep_num;
 
-	//初始化变量
-	high = wide = step_num = restep_num = pass = 0;
-	ch = option = last_step = NULL;
+	int x, y;//x 纵坐标, y 横坐标
+	int wide;//地图居中偏移宽度
+	int high;//地图居中偏移高度
+	int count;//计数器
+	char option;//游戏过程中读取键盘信息
+	int scenes;//当前场景
+	int isEnd;//结束判断变量
+	int reValue;//返回值，主界面场景
+
+				//定义游戏地图
+	char map[50][50] = { 0 };
+
+	//申明两数组，记录终点坐标
+	int aim_x[50] = { 0 }, aim_y[50] = { 0 }, xnum, ynum;
+
+	int restep_num;//记录剩余撤销次数
+	int step_num;//记录本局总步数
+	int isUndo;//记录是否撤销过
+	int lastStep_num;//记录上一次推箱子前所走的步数
+	int box_x, box_y;//记录上一次推箱子前箱的坐标
+	int box_nx, box_ny;//记录上一次推箱子后箱的坐标
+	int last_x, last_y;//记录上一次推箱子前角色的坐标
+
+					   //游戏初始化
+
+					   //初始化变量
+	count = 0;
+	wide = 0;
+	step_num = 0;
+	restep_num = 3;
+	option = NULL;
 	xnum = ynum = 0;
-	lstep = count = 0;
+	isUndo = 0;
+	scenes = 0;
+	reValue = 0;
+	isEnd = 0;
+
+	//读取地图
+	LoadMap(level,map);
+
+	//计算地图宽度
+	wide = strlen(map[0]);
 
 	//初始化起始位置
-	for (i = 0; i < 20; i++)
-	{
-		for (t = 0; map[i][t] != '\0'; t++)
-			if (map[i][t] == '@')
-			{
+	for (int i = 0; i < 20; i++) {
+		for (int t = 0; map[i][t] != '\0'; t++)
+			if (map[i][t] == '@') {
 				x = i;
 				y = t;
 				i = 99;
@@ -75,453 +97,338 @@ char gameloop(int level)
 	}
 
 	//寻找终点坐标
-	for (i = 2; i < 20; i++)
-	{
-		for (t = 2; map[i][t] != '\0'; t++)
-		{
-			if (map[i][t] == 'X' || map[i][t] == 'Q')
-			{
-				X_num[xnum] = i;
-				Y_num[ynum] = t;
+	for (int i = 2; i < 20; i++) {
+		for (int t = 2; map[i][t] != '\0'; t++) {
+			if (map[i][t] == 'X' || map[i][t] == 'Q') {
+				aim_x[xnum] = i;
+				aim_y[ynum] = t;
 				xnum++;
 				ynum++;
 			}
-			if (map[i][1] == '|')
-			{
+			if (map[i][1] == '|') {
+				high = i;
 				i = 99;
 				break;
 			}
 		}
 	}
-	//计算地图高度
-	for (high = 0; high < 20; high++)
-		if (map[high][0] != '|')
-			break;
-	high = (13 - high) / 2;
 
-	//计算地图宽度
+	//计算地图居中偏移量
+	high = (13 - high) / 2;
 	wide = (16 - strlen(map[0])) / 2;
 
-	//打印地图
-	game_face(level, step_num, restep_num);
-	for (i = 1; i <= 17; i++)
-	{
-		for (t = 0; t < strlen(map[0]); t++)
-		{
-			if (map[i][t] == '|' || map[i][t] == '=')
-				putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_black);
-			if (map[i][t] == ' ')
-				putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_land);
-			if (map[i][t] == 'O')
-				putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_BoxYellow);
-			if (map[i][t] == 'Q')
-				putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_BoxRed);
-			if (map[i][t] == '#')
-				putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_wall);
-			if (map[i][t] == 'X')
-				putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_aim);
-			if (map[i][t] == '@')
-				if (ch == 'd' || ch == 'D')
-				{
-					if (count % 5 > 0)
-						putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_ManRIGHT1);
-					else
-						putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_ManRIGHT2);
-				}
-				else if (ch == 'a' || ch == 'A')
-				{
-					if (count % 5 > 0)
-						putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_ManLEFT1);
-					else
-						putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_ManLEFT2);
-				}
-				else if (ch == 'w' || ch == 'W')
-				{
-					if (count % 5 > 0)
-						putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_ManUP1);
-					else
-						putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_ManUP2);
-				}
-				else
-				{
-					if (count % 5 > 0)
-						putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_ManDOWN1);
-					else
-						putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_ManDOWN2);
-				}
-		}
-		if (map[i][1] == '|')
-			break;
-	}
+	//游戏主循环
+	for (; is_run(); delay_fps(60)) {
 
-
-	//游戏主程序
-	for (; is_run(); delay_fps(60))
-	{
-		fflush(stdin);
-		Sleep(100);
-		// todo: 逻辑更新
-		if (kbhit())
-		{
-			ch = getch();
-			ch = tolower(ch);
-
-			switch (ch)
-			{
-				//向下移动
-			case 's':
-				if (map[x + 1][y] == ' ' || map[x + 1][y] == 'X')
-				{
-					map[x][y] = ' ';
-					x++;
-					map[x][y] = '@';
-					step_num++;
-				}
-				else if ((map[x + 1][y] == 'O' || map[x + 1][y] == 'Q') && map[x + 2][y] != 'O' && map[x + 2][y] != 'Q' && map[x + 2][y] != '#')
-				{
-					map[x][y] = ' ';
-					x++;
-					map[x][y] = '@';
-					map[x + 1][y] = 'O';
-					lstep = 1;
-					x_box = x;
-					y_box = y;
-					rerestep_num = step_num;
-					step_num++;
-					last_step = ch;//存储上一步信息
-
-					mciSendString(TEXT("seek Boxmove to 0"), NULL, 0, NULL);
-					mciSendString(TEXT("play Boxmove"), NULL, 0, NULL);
-				}
-				break;
-				//向上移动
-			case 'w':
-				if (map[x - 1][y] == ' ' || map[x - 1][y] == 'X')
-				{
-					map[x][y] = ' ';
-					x--;
-					map[x][y] = '@';
-					step_num++;
-				}
-				else if ((map[x - 1][y] == 'O' || map[x - 1][y] == 'Q') && map[x - 2][y] != 'O' && map[x - 2][y] != 'Q' && map[x - 2][y] != '#')
-				{
-					map[x][y] = ' ';
-					x--;
-					map[x][y] = '@';
-					map[x - 1][y] = 'O';
-					lstep = 1;
-					x_box = x;
-					y_box = y;
-					rerestep_num = step_num;
-					step_num++;
-					last_step = ch;//存储上一步信息
-
-					mciSendString(TEXT("seek Boxmove to 0"), NULL, 0, NULL);
-					mciSendString(TEXT("play Boxmove"), NULL, 0, NULL);
-				}
-				break;
-				//向左移动
-			case 'a':
-				if (map[x][y - 1] == ' ' || map[x][y - 1] == 'X')
-				{
-					map[x][y] = ' ';
-					y--;
-					map[x][y] = '@';
-					step_num++;
-				}
-				else if ((map[x][y - 1] == 'O' || map[x][y - 1] == 'Q') && map[x][y - 2] != 'O' && map[x][y - 2] != 'Q' && map[x][y - 2] != '#')
-				{
-					map[x][y] = ' ';
-					y--;
-					map[x][y] = '@';
-					map[x][y - 1] = 'O';
-					lstep = 1;
-					x_box = x;
-					y_box = y;
-					rerestep_num = step_num;
-					step_num++;
-					last_step = ch;//存储上一步信息
-
-					mciSendString(TEXT("seek Boxmove to 0"), NULL, 0, NULL);
-					mciSendString(TEXT("play Boxmove"), NULL, 0, NULL);
-				}
-				break;
-				//向右移动
-			case 'd':
-				if (map[x][y + 1] == ' ' || map[x][y + 1] == 'X')
-				{
-					map[x][y] = ' ';
-					y++;
-					map[x][y] = '@';
-					step_num++;
-				}
-				else if ((map[x][y + 1] == 'O' || map[x][y + 1] == 'Q') && map[x][y + 2] != 'O' && map[x][y + 2] != 'Q'&&map[x][y + 2] != '#')
-				{
-					map[x][y] = ' ';
-					y++;
-					map[x][y] = '@';
-					map[x][y + 1] = 'O';
-					lstep = 1;
-					x_box = x;
-					y_box = y;
-					rerestep_num = step_num;
-					step_num++;
-					last_step = ch;//存储上一步信息
-
-					mciSendString(TEXT("seek Boxmove to 0"), NULL, 0, NULL);
-					mciSendString(TEXT("play Boxmove"), NULL, 0, NULL);
-				}
-				break;
-
-			case 27://暂停界面
-				pause();
-				while (ch != 'r')
-				{
-					ch = getch();
-					if (ch == 'x' || ch == 'q' || ch == 'n' || ch == 'm' || ch == 'X' || ch == 'Q' || ch == 'N' || ch == 'M')
-					{
-						option = ch;
-						ch = 27;
-						break;
-					}
-				}
-				break;
-
-			case 'q'://重玩
-				option = ch;
-				break;
-			}
-		}
-
-		//撤销一步
-		if (lstep == 1 && ch == 'b'&&restep_num < 3)
-		{
-			switch (last_step)
-			{
-				//返还向下移动
-			case 's':
-				map[x][y] = ' ';
-				map[x_box + 1][y_box] = ' ';
-				map[x_box][y_box] = 'O';
-				x_box--;
-				x = x_box;
-				y = y_box;
-				map[x][y] = '@';
-				step_num = rerestep_num;
-				restep_num++;
-				lstep = 0;
-				break;
-				//返还向上移动
-			case 'w':
-				map[x][y] = ' ';
-				map[x_box - 1][y_box] = ' ';
-				map[x_box][y_box] = 'O';
-				x_box++;
-				x = x_box;
-				y = y_box;
-				map[x][y] = '@';
-				step_num = rerestep_num;
-				restep_num++;
-				lstep = 0;
-				break;
-				//返还向左移动
-			case 'a':
-				map[x][y] = ' ';
-				map[x_box][y_box - 1] = ' ';
-				map[x_box][y_box] = 'O';
-				y_box++;
-				x = x_box;
-				y = y_box;
-				map[x][y] = '@';
-				step_num = rerestep_num;
-				restep_num++;
-				lstep = 0;
-				break;
-				//返还向右移动
-			case 'd':
-				map[x][y] = ' ';
-				map[x_box][y_box + 1] = ' ';
-				map[x_box][y_box] = 'O';
-				y_box--;
-				x = x_box;
-				y = y_box;
-				map[x][y] = '@';
-				step_num = rerestep_num;
-				restep_num++;
-				lstep = 0;
-				break;
-			}
-		}
-
-		//if (lstep = 1)
-		//	last_step = ch;//存储上一步信息
-
-		//还原终点标记
-		for (i = 0; X_num[i] != 0; i++)
-		{
-			if (map[X_num[i]][Y_num[i]] == ' ')
-				map[X_num[i]][Y_num[i]] = 'X';
-			if (map[X_num[i]][Y_num[i]] == 'O')
-				map[X_num[i]][Y_num[i]] = 'Q';
-		}
-
-
-
-		//中途退出或重玩
-		if (ch == 27 || ch == 'q')
-		{
-			pass = 0;
-			break;
-		}
-
-		count++;
-		if (count == 99)
+		//每运行一帧，计数器增加1，每计数到60清零
+		if (count > 60)
 			count = 0;
+		count+=2;
+		
+		//界面打印
+		switch (scenes) {
+		case 0:
+			//游戏界面
+			game_face(level, step_num,restep_num);
 
-		// todo: 图形更新
-		// 清屏
-		cleardevice();
-		//打印地图
-		game_face(level, step_num, restep_num);
-		for (i = 1; i <= 17; i++)
-		{
-			for (t = 0; t < strlen(map[0]); t++)
+			for (int i = 1; i <= 17; i++)
 			{
-				if (map[i][t] == '|' || map[i][t] == '=')
-					putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_black);
-				if (map[i][t] == ' ')
-					putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_land);
-				if (map[i][t] == 'O')
-					putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_BoxYellow);
-				if (map[i][t] == 'Q')
-					putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_BoxRed);
-				if (map[i][t] == '#')
-					putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_wall);
-				if (map[i][t] == 'X')
-					putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_aim);
-				if (map[i][t] == '@')
-					if (ch == 'd' || ch == 'D')
-					{
-						if (count % 5 > 0)
-							putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_ManRIGHT1);
+				for (int t = 0; t < strlen(map[0]); t++)
+				{
+					if (map[i][t] == '|' || map[i][t] == '=')
+						putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_black);
+					if (map[i][t] == ' ')
+						putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_land);
+					if (map[i][t] == 'O')
+						putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_BoxYellow);
+					if (map[i][t] == 'Q')
+						putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_BoxRed);
+					if (map[i][t] == '#')
+						putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_wall);
+					if (map[i][t] == 'X')
+						putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_aim);
+					if (map[i][t] == '@')
+						if (option == 'd' )
+						{
+							if (count > 30 )
+								putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_ManRIGHT1);
+							else
+								putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_ManRIGHT2);
+						}
+						else if (option == 'a' )
+						{
+							if (count > 30)
+								putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_ManLEFT1);
+							else
+								putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_ManLEFT2);
+						}
+						else if (option == 'w')
+						{
+							if (count > 30)
+								putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_ManUP1);
+							else
+								putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_ManUP2);
+						}
 						else
-							putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_ManRIGHT2);
-					}
-					else if (ch == 'a' || ch == 'A')
-					{
-						if (count % 5 > 0)
-							putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_ManLEFT1);
-						else
-							putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_ManLEFT2);
-					}
-					else if (ch == 'w' || ch == 'W')
-					{
-						if (count % 5 > 0)
-							putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_ManUP1);
-						else
-							putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_ManUP2);
-					}
-					else
-					{
-						if (count % 5 > 0)
-							putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_ManDOWN1);
-						else
-							putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_ManDOWN2);
-					}
+						{
+							if (count > 30)
+								putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_ManDOWN1);
+							else
+								putimage(50 + t * 40 + wide * 40, 20 + i * 40 + high * 40, pimg_ManDOWN2);
+						}
+				}
+				if (map[i][1] == '|')
+					break;
 			}
-			if (map[i][1] == '|')
+			break;
+		case 1:
+			//暂停界面
+			pause();
+			break;
+		case 2:
+			//过关界面
+			if(level==maps_num-1)
+				lastlevel();
+			else
+				passlevel(step_num);
+			break;
+		default:
+			break;
+		}
+
+		if (kbhit()) {
+			//按键输入
+			option = getch();//获取按键输入
+			option = tolower(option);//如果输入是字母则变为小写
+
+									 //事件判定
+			switch (scenes) {
+			case 0:
+				if (option == 's') {//向下移动
+									//当前方是空地或者空目的地时可以移动上去
+					if (map[x + 1][y] == ' ' || map[x + 1][y] == 'X') {
+						map[x][y] = ' ';//将角色当前位置更新为空地（如果该位置应该为目的地我们将在后续代码进行处理）
+						x++;//更新角色位置
+						map[x][y] = '@';//将新的位置更新为角色
+						step_num++;//移动步数加1
+					}
+					//如果前方是箱子且箱子相同方向的下一位置不为墙或者箱子时，可以将当前箱子推动上去
+					else if ((map[x + 1][y] == 'O' || map[x + 1][y] == 'Q') && map[x + 2][y] != 'O' && map[x + 2][y] != 'Q' && map[x + 2][y] != '#') {
+						map[x][y] = ' ';
+
+						//记录推动箱子前角色的坐标
+						last_x = x;
+						last_y = y;
+
+						x++;
+
+						//记录推动箱子前箱子的坐标
+						box_nx = x;
+						box_ny = y;
+
+						map[x][y] = '@';
+						map[x + 1][y] = 'O';//在角色移动方向的下一位上更新为箱子（如果该位置为目的地，则箱子显示形态我们将在后续代码进行处理）
+						isUndo = 1;//将撤销判断变量设置为1（true）表示当前箱子位置为推动后的位置，允许撤销
+
+								   //记录最后一次被推动箱子的坐标
+						box_x = x + 1;
+						box_y = y;
+
+						lastStep_num = step_num;//记录上一次推箱子前所走的步数
+						step_num++;
+					}
+				}
+				else if (option == 'w') {//向上移动
+					if (map[x - 1][y] == ' ' || map[x - 1][y] == 'X') {
+						map[x][y] = ' ';
+						x--;
+						map[x][y] = '@';
+						step_num++;
+					}
+					else if ((map[x - 1][y] == 'O' || map[x - 1][y] == 'Q') && map[x - 2][y] != 'O' && map[x - 2][y] != 'Q' && map[x - 2][y] != '#') {
+						map[x][y] = ' ';
+
+						//记录推动箱子前角色的坐标
+						last_x = x;
+						last_y = y;
+
+						x--;
+
+						//记录推动箱子前箱子的坐标
+						box_nx = x;
+						box_ny = y;
+
+						map[x][y] = '@';
+						map[x - 1][y] = 'O';//在角色移动方向的下一位上更新为箱子（如果该位置为目的地，则箱子显示形态我们将在后续代码进行处理）
+						isUndo = 1;//将撤销判断变量设置为1（true）表示当前箱子位置为推动后的位置，允许撤销
+
+								   //记录最后一次被推动箱子的坐标
+						box_x = x - 1;
+						box_y = y;
+
+						lastStep_num = step_num;//记录上一次推箱子前所走的步数
+						step_num++;
+					}
+				}
+				else if (option == 'a') {//向左移动
+					if (map[x][y - 1] == ' ' || map[x][y - 1] == 'X') {
+						map[x][y] = ' ';
+						y--;
+						map[x][y] = '@';
+						step_num++;
+					}
+					else if ((map[x][y - 1] == 'O' || map[x][y - 1] == 'Q') && map[x][y - 2] != 'O' && map[x][y - 2] != 'Q' && map[x][y - 2] != '#') {
+						map[x][y] = ' ';
+
+						//记录推动箱子前角色的坐标
+						last_x = x;
+						last_y = y;
+
+						y--;
+
+						//记录推动箱子前箱子的坐标
+						box_nx = x;
+						box_ny = y;
+
+						map[x][y] = '@';
+						map[x][y - 1] = 'O';//在角色移动方向的下一位上更新为箱子（如果该位置为目的地，则箱子显示形态我们将在后续代码进行处理）
+						isUndo = 1;//将撤销判断变量设置为1（true）表示当前箱子位置为推动后的位置，允许撤销
+
+								   //记录最后一次被推动箱子的坐标
+						box_x = x;
+						box_y = y - 1;
+
+						lastStep_num = step_num;//记录上一次推箱子前所走的步数
+						step_num++;
+					}
+					break;
+				}
+				else if (option == 'd') {//向右移动
+					if (map[x][y + 1] == ' ' || map[x][y + 1] == 'X') {
+						map[x][y] = ' ';
+						y++;
+						map[x][y] = '@';
+						step_num++;
+					}
+					else if ((map[x][y + 1] == 'O' || map[x][y + 1] == 'Q') && map[x][y + 2] != 'O' && map[x][y + 2] != 'Q'&&map[x][y + 2] != '#') {
+						map[x][y] = ' ';
+
+						//记录推动箱子前角色的坐标
+						last_x = x;
+						last_y = y;
+
+						y++;
+
+						//记录推动箱子前箱子的坐标
+						box_nx = x;
+						box_ny = y;
+
+						map[x][y] = '@';
+						map[x][y + 1] = 'O';//在角色移动方向的下一位上更新为箱子（如果该位置为目的地，则箱子显示形态我们将在后续代码进行处理）
+						isUndo = 1;//将撤销判断变量设置为1（true）表示当前箱子位置为推动后的位置，允许撤销
+
+								   //记录最后一次被推动箱子的坐标
+						box_x = x;
+						box_y = y + 1;
+
+						lastStep_num = step_num;//记录上一次推箱子前所走的步数
+						step_num++;
+					}
+				}
+				else if (option == 'u') {
+					//撤销一步
+					if (isUndo && restep_num > 0) {
+
+						map[x][y] = ' ';//将角色当前位置更新为空地（如果该位置应该为目的地我们将在后续代码进行处理）
+										//将角色位置更新为之前存储的位置
+						x = last_x;
+						y = last_y;
+						map[x][y] = '@';//将角色还原的新位置更新为@
+
+										//同理更新箱子的位置
+						map[box_x][box_y] = ' ';
+						map[box_nx][box_ny] = 'O';
+
+						step_num = lastStep_num;//还原之前所走的步数
+
+						isUndo = 0;//将撤销判断变量设置为0（false）表示当前箱子位置为撤销后的位置，禁止再次撤销
+						restep_num--;//剩余可撤销次数减1
+					}
+				}
+				else if (option == 'q') {//重置本局游戏
+					reValue = 4;
+					isEnd = 1;
+				}
+				else if (option == 27) {//打开暂停菜单
+					scenes = 1;
+				}
 				break;
+			case 1:
+				if (option == 'r' || option == 27) {//继续游戏
+					scenes = 0;
+				}
+				else if (option == 'x') {//进入到关卡选择界面，但中途推出关卡选择的话不会继续当前游戏，会回到主菜单
+					reValue = 2;
+					isEnd = 1;
+				}
+				else if (option == 'q') {
+					reValue = 4;
+					isEnd = 1;
+				}
+				else if (option == 'n' && level != maps_num - 1) {//如果当前不是最后一关，则进入下一关
+					reValue = 5;
+					isEnd = 1;
+				}
+				else if (option == 'm') {//返回主菜单
+					reValue = 1;
+					isEnd = 1;
+				}
+				break;
+			case 2:
+				if (option == 'x') {
+					reValue = 2;
+					isEnd = 1;
+				}
+				else if (option == 'q') {
+					reValue = 4;
+					isEnd = 1;
+				}
+				else if (option == 'n'&&level != maps_num - 1) {
+					reValue = 5;
+					isEnd = 1;
+				}
+				else if (option == 'm') {
+					reValue = 1;
+					isEnd = 1;
+				}
+				break;
+			default:
+				break;
+			}
+		}
+
+		//逻辑更新
+
+		//还原终点标记,处理之前没有处理的问题,该环节一点要在通关条件判定之前进行才能正确判断是否过关
+		for (int i = 0; aim_x[i] != 0; i++) {//依次检查终点坐标
+			if (map[aim_x[i]][aim_y[i]] == ' ')//如果为' '则更新为'X'
+				map[aim_x[i]][aim_y[i]] = 'X';
+			if (map[aim_x[i]][aim_y[i]] == 'O')//如果为'O'则更新为'Q'
+				map[aim_x[i]][aim_y[i]] = 'Q';
 		}
 
 		//通关条件判定
-		for (i = 0; X_num[i] != 0; i++)
-		{
-			if (map[X_num[i]][Y_num[i]] == 'Q')
-				pass++;
+		int count = 0;//记录当前有多少个箱子到达终点坐标
+		for (int i = 0; aim_x[i] != 0; i++) {//依次检查终点坐标
+			if (map[aim_x[i]][aim_y[i]] == 'Q')//如果该位置为箱子
+				count++;//计数器加1
 		}
-		if (pass == xnum)
-		{
-			pass = 1;
-			ch = 27;
-			Sleep(1000);
+		if (count == xnum) {//如果count等于终点坐标数目，则表示通关
+			scenes = 2;
+		}
+
+		if (isEnd)
 			break;
-		}
-		else
-			pass = 0;
-	}
-
-	//判断能否继续下一关
-	cleardevice();
-	if (option != NULL)
-	{
-		if (option == 'n')
-		{
-			if (level == maps_num - 1)
-			{
-				lastlevel();
-				option = 'p';
-				Sleep(1500);
-				system("cls");
-			}
-		}
-
-		delimage(pimg_wall);
-		delimage(pimg_land);
-		delimage(pimg_BoxYellow);
-		delimage(pimg_BoxRed);
-		delimage(pimg_aim);
-		delimage(pimg_ManUP1);
-		delimage(pimg_ManUP2);
-		delimage(pimg_ManDOWN1);
-		delimage(pimg_ManDOWN2);
-		delimage(pimg_ManRIGHT1);
-		delimage(pimg_ManRIGHT2);
-		delimage(pimg_ManLEFT1);
-		delimage(pimg_ManLEFT2);
-		delimage(pimg_black);
-		return option;
-	}
-
-	//通关界面
-	if (pass == 1)
-	{
-		passlevel(step_num);
-	}
-	while (pass == 1)
-	{
-		option = getch();
-		if (option == 27)
-			option = 'm';
-		if (option == 'n' || option == 'N')
-		{
-			if (level == maps_num - 1)
-			{
-				lastlevel();
-				option = 'p';
-				Sleep(1500);
-				cleardevice();
-			}
-		}
-		if (option == 'x' || option == 'q' || option == 'n' || option == 'p' || option == 'm' || option == 'X' || option == 'Q' || option == 'N' || option == 'P' || option == 'M')
-		{
-			cleardevice();
-
-			delimage(pimg_wall);
-			delimage(pimg_land);
-			delimage(pimg_BoxYellow);
-			delimage(pimg_BoxRed);
-			delimage(pimg_aim);
-			delimage(pimg_ManUP1);
-			delimage(pimg_ManUP2);
-			delimage(pimg_ManDOWN1);
-			delimage(pimg_ManDOWN2);
-			delimage(pimg_ManRIGHT1);
-			delimage(pimg_ManRIGHT2);
-			delimage(pimg_ManLEFT1);
-			delimage(pimg_ManLEFT2);
-			delimage(pimg_black);
-			return option;
-		}
 	}
 
 	delimage(pimg_wall);
@@ -538,7 +445,7 @@ char gameloop(int level)
 	delimage(pimg_ManLEFT1);
 	delimage(pimg_ManLEFT2);
 	delimage(pimg_black);
-	return option;
+	return reValue;
 }
 
 void game_face(int level, int step_num, int restep_num)
@@ -563,12 +470,12 @@ void game_face(int level, int step_num, int restep_num)
 	sprintf(str, "步数：%d", step_num);
 	outtextxy(780, 250, str);
 
-	sprintf(str, "剩余撤销次数：%d", 3 - restep_num);
+	sprintf(str, "剩余撤销次数：%d", restep_num);
 	outtextxy(780, 300, str);
 
 	outtextxy(780, 350, "重玩本关(Q)");
-	outtextxy(780, 400, "撤销(B)");
-	outtextxy(780, 450, "菜单(M)");
+	outtextxy(780, 400, "撤销(U)");
+	outtextxy(780, 450, "暂停(ESC)");
 }
 
 void pause()
@@ -590,7 +497,7 @@ void pause()
 	outtextxy(140, 300, "选关(X)");
 	outtextxy(320, 300, "重玩(Q)");
 	outtextxy(480, 300, "下一关(N)");
-	outtextxy(700, 300, "菜单(M)");
+	outtextxy(700, 300, "主菜单(M)");
 }
 
 void lastlevel()
