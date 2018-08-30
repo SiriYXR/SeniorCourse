@@ -416,6 +416,8 @@ int gameloop(int level)
 					map[box_x][box_y] = ' ';
 					map[box_nx][box_ny] = 'O';
 
+					step_num = lastStep_num;//还原之前所走的步数
+
 					isUndo = 0;//将撤销判断变量设置为0（false）表示当前箱子位置为撤销后的位置，禁止再次撤销
 					restep_num--;//剩余可撤销次数减1
 				}
