@@ -152,7 +152,6 @@ int gameloop(int level)
 
 	int x, y;//x 纵坐标, y 横坐标
 	int wide;//地图宽度
-	int high;//地图高度
 	char option;//游戏过程中读取键盘信息
 	int scenes;//当前场景
 	int isEnd;//结束判断变量
@@ -186,7 +185,7 @@ int gameloop(int level)
 	isEnd = 0;
 
 	//读取地图
-	LoadMap(level, &high, map);
+	LoadMap(level, map);
 
 	//计算地图宽度
 	wide = strlen(map[0]);
@@ -211,7 +210,7 @@ int gameloop(int level)
 				xnum++;
 				ynum++;
 			}
-			if (i == high) {
+			if (map[i][1] == '|') {
 				i = 99;
 				break;
 			}
@@ -500,7 +499,7 @@ int gameloop(int level)
 	return reValue;//返回reValue
 }
 
-void LoadMap(int level, int *map_high, char(*map)[50]) {
+void LoadMap(int level, char(*map)[50]) {
 	char buffer[256];//字符串缓冲区，用于存放关卡文件路径
 	FILE *fp;//用于打开关卡文件的文件指针
 	sprintf(buffer, "data\\Map\\%d.txt", level + 1);//通过sprintf函数格式化文件路径为我们要读取的文件
@@ -510,7 +509,6 @@ void LoadMap(int level, int *map_high, char(*map)[50]) {
 		map[i][strlen(map[i]) - 1] = '\0';//在字符串末尾手动加上结束符'\0'
 		if (map[i][1] == '|') {//当字符串第二位出现'|'时表示该行为最后一行，文件读取结束
 			map[i][1] = '=';//将该位字符设置为'='
-			map_high = i;//记录当前i值为地图的高度
 			break;//跳出循环
 		}
 	}

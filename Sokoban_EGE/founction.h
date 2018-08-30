@@ -12,9 +12,8 @@
 #define maps_num 35
 
 void mainloop();
-char gameloop(int level);
+int gameloop(int level);
 void main_interface1();
 void main_interface2();
-void endmovie();
 void selectLevel(int level);
 void LoadMap(int level, char(*map)[50]);
