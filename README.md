@@ -117,7 +117,7 @@
 
 ---
 ### Sokoban_EGE
-&emsp;&emsp;本项目修改自[Sokoban2.1](https://github.com/SiriYXR/Sokoban2.1)，采用新版Sokoban_Console算法架构，通过ege图形库实现彩色界面显示，游戏音效等功能。
+&emsp;&emsp;本项目修改自[Sokoban2.1](https://github.com/SiriYXR/Sokoban2.1)，采用新版Sokoban_Console算法架构，通过ege图形库实现图形界面显示，游戏音效等功能。
 
 代码文件：<br>
 
