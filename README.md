@@ -138,8 +138,7 @@
 
 |文件/文件夹名|说明|
 |:---|:---|
-|[image/map/music](https://github.com/SiriYXR/SeniorCourse/tree/master/Sokoban_EGE/resources)|存储游戏的地图和图片
-音频文件|
+|[image/map/music](https://github.com/SiriYXR/SeniorCourse/tree/master/Sokoban_EGE/resources)|存储地图和图片音频文件|
 
 <br>
 
