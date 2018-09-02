@@ -119,6 +119,30 @@
 ### Sokoban_EGE
 &emsp;&emsp;本项目修改自[Sokoban2.1](https://github.com/SiriYXR/Sokoban2.1)
 
+&emsp;&emsp;原项目为我大一下学期时编写，因当时编程经验不足导致代码冗余，架构不够优美，算法不够优化等问题。所以现今现版本在尽量保留原有程序C语言风格的基础上做如下修改：
+1. 重构游戏架构
+2. 优化算法，删除冗余代码
+3. 修改变量命名，使其更具语义化
+4. 完善返回菜单界面选项
+
+代码文件：<br>
+
+|文件名|说明|
+|:---|:---|
+|[function.h](https://github.com/SiriYXR/SeniorCourse/blob/master/Sokoban_EGE/founction.h)|函数前置声明，全局变量声明|
+|[main.cpp](https://github.com/SiriYXR/SeniorCourse/blob/master/Sokoban_EGE/main.cpp)|定义程序入口main()函数|
+|[mainloop.cpp](https://github.com/SiriYXR/SeniorCourse/blob/master/Sokoban_EGE/mainloop.cpp)|实现消息循环，菜单界面等函数|
+|[game.cpp](https://github.com/SiriYXR/SeniorCourse/blob/master/Sokoban_EGE/game.cpp)|定义游戏循环，菜单界面，文件读取等函数|
+
+资源文件：<br>
+
+|文件/文件夹名|说明|
+|:---|:---|
+|[image/map/music](https://github.com/SiriYXR/SeniorCourse/tree/master/Sokoban_EGE/resources)|存储游戏的地图和图片
+音频文件|
+
+<br>
+
 <div align=center>
   <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/sokoban_ege/1.jpg"/>
   <img src="https://github.com/SiriYXR/SeniorCourse/blob/master/doc/README/sokoban_ege/2.jpg"/>
