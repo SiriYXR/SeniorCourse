@@ -117,13 +117,7 @@
 
 ---
 ### Sokoban_EGE
-&emsp;&emsp;本项目修改自[Sokoban2.1](https://github.com/SiriYXR/Sokoban2.1)
-
-&emsp;&emsp;原项目为我大一下学期时编写，因当时编程经验不足导致代码冗余，架构不够优美，算法不够优化等问题。所以现今现版本在尽量保留原有程序C语言风格的基础上做如下修改：
-1. 重构游戏架构
-2. 优化算法，删除冗余代码
-3. 修改变量命名，使其更具语义化
-4. 完善返回菜单界面选项
+&emsp;&emsp;本项目修改自[Sokoban2.1](https://github.com/SiriYXR/Sokoban2.1)，采用新版Sokoban_Console算法架构，通过ege图形库实现彩色界面显示，游戏音效等功能。
 
 代码文件：<br>
 
@@ -138,7 +132,9 @@
 
 |文件/文件夹名|说明|
 |:---|:---|
-|[image/map/music](https://github.com/SiriYXR/SeniorCourse/tree/master/Sokoban_EGE/resources)|存储地图和图片音频文件|
+|[resources/map](https://github.com/SiriYXR/SeniorCourse/tree/master/Sokoban_EGE/resources/map)|地图文件|
+|[resources/image](https://github.com/SiriYXR/SeniorCourse/tree/master/Sokoban_EGE/resources/image)|贴图纹理文件|
+|[resources/music](https://github.com/SiriYXR/SeniorCourse/tree/master/Sokoban_EGE/resources/music)|音频文件|
 
 <br>
 
