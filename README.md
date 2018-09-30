@@ -49,7 +49,6 @@
 
 ### 项目结构如下：<br>
 * [doc](#doc)
-* [SeniorCourse](#seniorcourse)
 * [EGEBase](#egebase)
 * [Sokoban_Console](#sokoban_console)
 * [Sokoban_EGE](#sokoban_ege)
@@ -69,9 +68,6 @@
   * [其他](https://github.com/SiriYXR/SeniorCourse/tree/master/doc/%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99/%E5%85%B6%E4%BB%96)
   * [环境配置](https://github.com/SiriYXR/SeniorCourse/tree/master/doc/%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE)
   * [帮助文档](https://github.com/SiriYXR/SeniorCourse/tree/master/doc/%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3)
-
-### SeniorCourse
-&emsp;&emsp;该项目工程为上课教学代码编写演示所用，其下将会保存上课时所写的一些代码草稿。
 
 ### EGEBase
 &emsp;&emsp;该项目工程为EGE的基础教学代码，来自EGE官方教程，其中包含了29个练习示例和14个demo程序供同学参考学习。课堂上会选讲一些该项目中的重要内容，主要还是需要同学们下来利用课余时间自行学习。
